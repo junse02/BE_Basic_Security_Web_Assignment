@@ -1,0 +1,14 @@
+<form th:action="@{|/post/update/${boardDto.id}|}" th:object="${boardDto}" method="post">
+    <head>
+        <meta charset="UTF-8">
+        <title>게시글 작정</title>
+    </head>
+    <input type="hidden" name="_method" value="put" />
+    <input type="hidden" th:field="*{id}" />
+
+    <input type="text" th:field="*{title}" placeholder="제목" required/><br/>
+    <textarea th:field="*{content}" placeholder="내용" required></textarea><br/>
+    <input type="text" th:field="*{writer}" placeholder="작성자" required/><br/>
+
+    <button type="submit">작성</button>
+</form>
