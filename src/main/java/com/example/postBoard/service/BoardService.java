@@ -36,6 +36,7 @@ public class BoardService {
                     .writer(board.getWriter())
                     .title(board.getTitle())
                     .content(board.getContent())
+                    .createdAt(board.getCreatedAt())
                     .build();
 
             boardDtoArrayList.add(boardDto);
@@ -55,6 +56,7 @@ public class BoardService {
                     .writer(boardEntity.getWriter())
                     .title(boardEntity.getTitle())
                     .content(boardEntity.getContent())
+                    .createdAt(boardEntity.getCreatedAt())
                     .build();
 
             return boardDto;

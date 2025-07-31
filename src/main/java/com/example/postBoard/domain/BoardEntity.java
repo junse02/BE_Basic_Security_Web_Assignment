@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Getter @Setter
 public class BoardEntity {
@@ -17,6 +19,8 @@ public class BoardEntity {
     @Column(length = 1000)
     private String content;
     private String writer;
+
+    private LocalDateTime createdAt;
 
     public void updateBoard(BoardDto boardDto) {
         this.title = boardDto.getTitle();

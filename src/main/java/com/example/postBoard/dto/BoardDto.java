@@ -3,6 +3,7 @@ package com.example.postBoard.dto;
 import com.example.postBoard.domain.BoardEntity;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @NoArgsConstructor
@@ -13,6 +14,7 @@ public class BoardDto {
     private String title;
     private String content;
     private String writer;
+    private LocalDateTime createdAt;
 
     public BoardEntity toEntity() {
         BoardEntity boardEntity = new BoardEntity();
@@ -20,6 +22,7 @@ public class BoardDto {
         boardEntity.setTitle(title);
         boardEntity.setContent(content);
         boardEntity.setWriter(writer);
+        boardEntity.setCreatedAt(createdAt);
         return boardEntity;
     }
 

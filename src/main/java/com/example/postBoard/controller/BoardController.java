@@ -38,7 +38,7 @@ public class BoardController {
     @PostMapping("/post")
     public String save(@Valid BoardDto boardDto, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "board/post.html";
+            return "board/post";
         }
         boardService.saveBoard(boardDto);
         return "redirect:/";
@@ -49,7 +49,7 @@ public class BoardController {
     public String getBoardList(Model model) {
         List<BoardDto> boardList = boardService.findAllList();
         model.addAttribute("boardList", boardList);
-        return "board/list.html";
+        return "board/list";
     }
 
     // 특정 게시글 상세 조회하기
@@ -57,7 +57,7 @@ public class BoardController {
     public String findById(@PathVariable int id, Model model) {
         BoardDto boardDto = boardService.findById(id);
         model.addAttribute("boardDto", boardDto);
-        return "board/detail.html";
+        return "board/detail";
     }
 
     // 수정할 게시글의 id를 통해 해당 게시글 데이터 가져오기
@@ -65,7 +65,7 @@ public class BoardController {
     public String update(@PathVariable int id, Model model) {
         BoardDto boardDto = boardService.findById(id);
         model.addAttribute("boardDto", boardDto);
-        return "board/update.html";
+        return "board/update";
     }
 
     // 게시글 데이터 수정
